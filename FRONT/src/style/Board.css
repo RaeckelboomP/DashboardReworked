@@ -1,0 +1,41 @@
+.board {
+    background-color: rgb(212, 212, 188);
+    min-height: calc(100vh - 181px);
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+.board>div {
+    height: auto;
+    margin: 2px;
+    background-color: beige;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: calc(100%/3);
+}
+.widget {
+    height: 300px;
+    background-color: #4c3b4d;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.widget>p {
+    margin: 0;
+}
+.new_widget {
+    background-color: rgb(65, 203, 125);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.new_widget>p {
+    margin-left: 2px;
+}
+.new_widget:hover {
+    background-color: rgb(73, 250, 149);
+}

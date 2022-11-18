@@ -1,0 +1,20 @@
+.overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.modal_content {
+    position: fixed;
+    background-color: white;
+    padding: 50px;
+    border-radius: 5px;
+    width: 30%;
+    height: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

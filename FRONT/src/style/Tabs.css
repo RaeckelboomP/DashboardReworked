@@ -1,0 +1,48 @@
+.tabs_container {
+    margin: 5px 5px 0 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+.current_tabs {
+    display: flex;
+    flex-direction: row;
+    
+}
+.plus_btn {
+    margin: 0px 2px;
+}
+.tabs_container>button {
+    display: flex;
+    align-items: center;
+}
+.tab {
+    height: fit-content;
+    border: 1px solid black;
+    padding-top: 1px;
+    padding-bottom: 1px; 
+}
+
+.tabs_container>button:hover, .tab>button:hover {
+    background-color: rgb(173, 255, 174);
+}
+
+.tab:hover {
+    border: 2px solid black;
+    padding-top: 0px;
+    padding-bottom: 0px; 
+}
+
+.tab>button{
+    border: none;
+    background-color: beige;
+}
+
+#dashboard>div {
+    display: none;
+}
+
+#dashboard>div:first-child {
+    display: block;
+}
