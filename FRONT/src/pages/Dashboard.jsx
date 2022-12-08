@@ -11,8 +11,8 @@ const Dashboard = () => {
     const [widgets, setWidgets] = useState([]);
     const [id, setId] = useState(0);
 
-    var ajoutWidget = (column, data) => {
-        setWidgets(widgets => [...widgets, {data:data, column:column, id:id}]);
+    var ajoutWidget = (tabId, column, data) => {
+        setWidgets(widgets => [...widgets, {tabId:tabId, data:data, column:column, id:id}]);
         setId(id+1);
     }
 
@@ -42,7 +42,7 @@ const Dashboard = () => {
             }
                 {tabs.map((tab) => (
                     activeTab === tab.id 
-                    ? <Board key={tab.id} idTab={tab.id} />
+                    ? <Board key={tab.id} idTab={tab.id} activeTab={activeTab} />
                     : null
                 ))}
         </div>

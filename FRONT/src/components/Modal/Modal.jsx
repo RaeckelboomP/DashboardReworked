@@ -8,12 +8,11 @@ export default function Modal(props) {
     const [selectedValue, setSelectedValue] = useState("weather");
     useEffect(() => {
         setSelectedValue(selectWidgetRef.current ? selectWidgetRef.current.value : "");
-    })
+    }, [])
     const [weatherWidgetStatus, setWeatherWidgetStatus] = useState(false);
     const [deezerWidgetStatus, setDeezerWidgetStatus] = useState(false);
     const [selectedArtist, setSelectedArtist] = useState("");
     const [albums, setAlbums] = useState(null);
-    const [selectedAlbum, setSelectedAlbum] = useState(null);
     const [deezerErrorMessage, setDeezerErrorMessage] = useState("");
     const [weatherErrorMessage, setWeatherErrorMessage] = useState("");
     const [id, setId] = useState(0);
@@ -21,7 +20,6 @@ export default function Modal(props) {
     const toggleModal = () => {
         setModal(!modal)
         setSelectedArtist("");
-        setSelectedAlbum("");
         setAlbums(null);
         setDeezerWidgetStatus(false);
         setWeatherWidgetStatus(false);
@@ -52,7 +50,7 @@ export default function Modal(props) {
                 let modifiedHtml = res.data.html.replace("width=\"700\"", "");
                 modifiedHtml = modifiedHtml.replace("id=\"deezer-widget\"", "id=\"deezer-widget"+id+"\"");
                 setId(id + 1);
-                props.ajoutWidget(props.column, modifiedHtml);
+                props.ajoutWidget(props.activeTab, props.column, modifiedHtml);
                 toggleModal();
             })
     }
@@ -66,7 +64,7 @@ export default function Modal(props) {
                 <img src='${res.data.picture}'/>
             `;
             setId(id + 1);
-            props.ajoutWidget(props.column, data)
+            props.ajoutWidget(props.activeTab, props.column, data)
             toggleModal();
         }).catch((error) => {
             setWeatherErrorMessage("No such city founded, please check your typing.");
@@ -130,10 +128,7 @@ export default function Modal(props) {
                             {albums !== null && (
                                 <>
                                     <h3>Please select an album to listen</h3>
-                                    <select ref={selectAlbumRef} name="album" id="album"
-                                        onChange={e => {
-                                            setSelectedAlbum(e.target.value);
-                                        }}>
+                                    <select ref={selectAlbumRef} name="album" id="album">
                                         {albums.map((album) => (
                                             <option key={album.id} value={album.id}>{album.title}</option>
                                         ))}
