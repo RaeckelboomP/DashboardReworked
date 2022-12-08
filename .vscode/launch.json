@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<T-JAV-501-BDX-5-1-dashboard-guillaume.fournier>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.epitech.dashboardpierre.demo.DemoApplication",
+            "projectName": "T-JAV-501-BDX-5-1-dashboard-guillaume.fournier",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
