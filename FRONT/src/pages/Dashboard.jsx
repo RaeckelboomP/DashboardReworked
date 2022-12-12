@@ -11,8 +11,8 @@ const Dashboard = () => {
     const [widgets, setWidgets] = useState([]);
     const [id, setId] = useState(0);
 
-    var ajoutWidget = (tabId, column, data) => {
-        setWidgets(widgets => [...widgets, {tabId:tabId, data:data, column:column, id:id}]);
+    var ajoutWidget = (tabId, column, data, type) => {
+        setWidgets(widgets => [...widgets, {tabId:tabId, data:data, column:column, id:id, type:type}]);
         setId(id+1);
     }
 

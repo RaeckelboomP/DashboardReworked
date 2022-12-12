@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-
+@SuppressWarnings({"unchecked", "rawtypes"})
 @SpringBootApplication
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
