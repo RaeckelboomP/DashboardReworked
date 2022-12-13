@@ -3,9 +3,17 @@ import { Carousel } from '@mantine/carousel';
 
 const HourlyWeather = ( props ) => {
     console.log(props)
+    const hourData = props.widgetDatas.data[0];
+    const weatherHourlyDataPath = props.widgetDatas.data[1];
     return (
         <div>
-            
+            <div className='hourlyWeatherWidgetHeader'>
+                <h2>{hourData.label}</h2>
+                <div className='hourlyWeatherWidgetHeaderContent'>
+                    <p>{hourData.temperature}°C</p>
+                    <img alt="weather" src={hourData.picture}/>
+                </div>
+            </div>
             <Carousel
             withIndicators
             height={200}
@@ -13,14 +21,23 @@ const HourlyWeather = ( props ) => {
             slideGap="xs"
             align="start"
             slidesToScroll={1}
+            dragFree
             >
-                {/* Do some for each function here to display each iteration of hourly informations */}
-                <Carousel.Slide>1</Carousel.Slide>
-                <Carousel.Slide>2</Carousel.Slide>
-                <Carousel.Slide>3</Carousel.Slide>
-                <Carousel.Slide>1a</Carousel.Slide>
-                <Carousel.Slide>2a</Carousel.Slide>
-                <Carousel.Slide>3a</Carousel.Slide>
+                {weatherHourlyDataPath.map((hourData, index) => (<Carousel.Slide key={index}>
+                    <img alt="weather" src={hourData.picture}/>
+                    <p className='hourDataContent'>{hourData.temperature}°C</p>
+                    <p className='hourDataContent'>{hourData.humidity}%</p>
+                    <p className='hourDataContent'>{hourData.precipitation}mm</p>
+                    <p className='hourDataContent'>{hourData.windDirection}°</p>
+                    <p className='hourDataContent'>{hourData.windSpeed}km/h</p>
+                    <p className='hourDataContent'>{hourData.time.slice(11, 16)}</p>
+                    {/*
+                    time: "2022-12-13T00:00"
+                    windDirection: "86"
+                    windSpeed: "9.7"*/}
+                    </Carousel.Slide>))
+                
+                }
             </Carousel>
         </div>
     );

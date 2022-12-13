@@ -37,6 +37,27 @@
     justify-content: center;
     align-items: center;
 }
+.hourlyWeatherWidgetHeader {
+    background-color: #214851;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hourlyWeatherWidgetHeaderContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+.hourDataContent {
+    margin: 0;
+}
+.mantine-Carousel-root {
+    background-color: #aec8ce;
+}
 .widget>p {
     margin: 0;
 }
