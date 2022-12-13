@@ -11,7 +11,7 @@ const DeezerPlayer = (props) => {
     */
 
     return (
-        <div class="deezerPlayer" key={props.widgetDatas.idTab + "column1" + props.widgetDatas.id}
+        <div className="deezerPlayer" key={props.widgetDatas.idTab + "column1" + props.widgetDatas.id}
                         dangerouslySetInnerHTML={{__html: htmlData}} />                      
     );
 };

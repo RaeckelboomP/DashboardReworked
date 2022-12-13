@@ -1,7 +1,7 @@
 import { BsFillPlusSquareFill } from 'react-icons/bs';
-import Board from "../components/Board";
 import {useState} from 'react';
 import { WidgetContext } from '../WidgetContext';
+import Board from "../components/Board";
 
 const Dashboard = () => {
 

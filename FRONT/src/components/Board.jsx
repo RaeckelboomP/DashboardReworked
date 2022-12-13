@@ -1,7 +1,8 @@
 import { useContext } from 'react';
-import Modal from './Modal/Modal';
 import { WidgetContext } from '../WidgetContext';
 import Widget from './widgets/Widget';
+import Modal from './Modal/Modal';
+
 
 const Board = (props) => {
     const { widgets, ajoutWidget } = useContext(WidgetContext);
@@ -13,7 +14,7 @@ const Board = (props) => {
                 .filter((widget) => widget.tabId === props.activeTab)
                 .map((widget) => (
                     widget.column === 1 && (
-                        <Widget keyParams={props.idTab + "column1" + widget.id}
+                        <Widget key={props.idTab + "column1" + widget.id}
                         className="widget" widgetDatas={widget} />
                     )
                 ))}
@@ -25,7 +26,7 @@ const Board = (props) => {
                 .filter((widget) => widget.tabId === props.activeTab)
                 .map((widget) => (
                     widget.column === 2 && (
-                        <Widget keyParams={props.idTab + "column2" + widget.id}
+                        <Widget key={props.idTab + "column2" + widget.id}
                         className="widget" widgetDatas={widget} />
                     )
                 ))}
@@ -37,7 +38,7 @@ const Board = (props) => {
                 .filter((widget) => widget.tabId === props.activeTab)
                 .map((widget) => (
                     widget.column === 3 && (
-                        <Widget keyParams={props.idTab + "column3" + widget.id}
+                        <Widget key={props.idTab + "column3" + widget.id}
                         className="widget" widgetDatas={widget} />
                     )
                 ))}

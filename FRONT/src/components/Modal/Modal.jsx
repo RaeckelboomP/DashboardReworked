@@ -59,12 +59,7 @@ export default function Modal(props) {
     const createWeatherWidget = () => {
         axios.get(`http://localhost:8080/weather?city=${cityRef.current.value}`)
         .then((res) => {
-            let data = res.data/* `
-                <h2>${res.data.label}</h2>
-                <p>${res.data.temperature}°C</p>
-                <p>${res.data.temps}</p>
-                <img src='${res.data.picture}'/>
-            ` */;
+            let data = res.data;
             setId(id + 1);
             props.ajoutWidget(props.activeTab, props.column, data, "Weather");
             toggleModal();
@@ -75,12 +70,7 @@ export default function Modal(props) {
     const createHourlyWeatherWidget = () => {
         axios.get(`http://localhost:8080/weatherHourly?city=${cityRef.current.value}`)
         .then((res) => {
-            let data = `
-                <h2>${res.data[0].label}</h2>
-                <p>${res.data[0].temperature}°C</p>
-                <p>${res.data[0].temps}</p>
-                <img src='${res.data[0].picture}'/>
-            `;
+            let data = res.data;
             setId(id + 1);
             props.ajoutWidget(props.activeTab, props.column, data, "HourlyWeather");
             toggleModal();
