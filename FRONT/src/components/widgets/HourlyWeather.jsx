@@ -8,27 +8,29 @@ const HourlyWeather = ( props ) => {
     return (
         <div>
             <div className='hourlyWeatherWidgetHeader'>
-                <h2>{hourData.label}</h2>
+                <h2 className='forecastCityName'>{hourData.label}</h2>
                 <div className='hourlyWeatherWidgetHeaderContent'>
-                    <p>{hourData.temperature}°C</p>
-                    <img alt="weather" src={hourData.picture}/>
+                    <p className='temperature' >{hourData.temperature}°C</p>
+                    <p className='weatherIcon' dangerouslySetInnerHTML={{__html: hourData.picture}}></p>
                 </div>
             </div>
             <Carousel
-            withIndicators
             height={200}
-            slideSize="33.333333%"
+            slideSize="10%"
             slideGap="xs"
-            align="start"
+            align="center"
             slidesToScroll={1}
             dragFree
             >
                 {weatherHourlyDataPath.map((hourData, index) => (<Carousel.Slide key={index}>
-                    <img alt="weather" src={hourData.picture}/>
-                    <p className='hourDataContent'>{hourData.temperature}°C</p>
+                    <p className='hourlyWeatherIcon' dangerouslySetInnerHTML={{__html: hourData.picture}}></p>
+                    <p className='hourDataContent'>{hourData.temperature} °C</p>
                     <p className='hourDataContent'>{hourData.humidity}%</p>
-                    <p className='hourDataContent'>{hourData.precipitation}mm</p>
-                    <p className='hourDataContent'>{hourData.windDirection}°</p>
+                    <p className='hourDataContent'>{hourData.precipitation} mm</p>
+                    <img 
+                style={{'transform': `rotate(${hourData.windDirection}deg)`}} 
+                className='hourlyWeatherWindIcon' alt='wind icon'
+                src='\images\windDirection.png'></img>
                     <p className='hourDataContent'>{hourData.windSpeed}km/h</p>
                     <p className='hourDataContent'>{hourData.time.slice(11, 16)}</p>
                     {/*
