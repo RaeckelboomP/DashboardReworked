@@ -93,38 +93,111 @@ public class WeatherController {
 		String picture = "";
 		switch(weathercode){
 			case 0:
-			temps = "soleil";
-			picture = "/images/soleil.png";
+			temps = "Clear sky";
+			picture = "<i class=\"qi-sunny\"></i>";
 			break;
 
 			case 1:
-			temps = "partiellement dégagé";
-			picture = "/images/partiellement_degage_couvert.png";
+			temps = "Mainly clear";
+			picture = "<i class=\"qi-few-clouds\"></i>";
 			break;
 
 			case 2:
-			temps = "partiellement couvert";
-			picture = "/images/partiellement_degage_couvert.png";
+			temps = "Partly cloudy";
+			picture = "<i class=\"qi-cloudy\"></i>";
 			break;
 
 			case 3:
-			temps = "couvert";
-			picture = "/images/couvert.png";
+			temps = "Overcast";
+			picture = "<i class=\"qi-overcast\"></i>";
 			break;
 
 			case 45:
-			temps = "brouillard";
-			picture = "/images/brouillard.png";
+			temps = "Fog";
+			picture = "<i class=\"qi-foggy\"></i>";
+			break;
+
+			case 48:
+			temps = "Depositing rime fog";
+			picture = "<i class=\"qi-foggy\"></i>";
+			break;
+			
+			case 51:
+			case 55:
+			case 53:
+			case 56:
+			case 57:
+			temps = "Drizzle";
+			picture = "<i class=\"qi-drizzle-rain\"></i>";
 			break;
 
 			case 61:
-			temps = "légère pluie";
-			picture = "/images/averse.png";
+			case 66:
+			temps = "Light rain";
+			picture = "<i class=\"qi-light-rain\"></i>";
+			break;
+			
+			case 63:
+			temps = "Moderate rain";
+			picture = "<i class=\"qi-moderate-rain\"></i>";
+			break;
+			
+			case 65:
+			case 67:
+			temps = "Heavy intensity rain";
+			picture = "<i class=\"qi-heavy-rain\"></i>";
+			break;
+
+			case 71:
+			temps = "Light snow fall";
+			picture = "<i class=\"qi-light-snow\"></i>";
+			break;
+
+			case 73:
+			temps = "Moderate snow fall";
+			picture = "<i class=\"qi-moderate-snow\"></i>";
+			break;
+
+			case 75:
+			temps = "Heavy snow fall";
+			picture = "<i class=\"qi-heavy-snow\"></i>";
+			break;
+
+			case 77:
+			temps = "Hail";
+			picture = "<i class=\"qi-hail\"></i>";
 			break;
 
 			case 80:
-			temps = "pluie";
-			picture = "/images/pluie.png";
+			case 81:
+			temps = "Shower rain";
+			picture = "<i class=\"qi-shower-rain\"></i>";
+			break;
+
+			case 82:
+			temps = "Heavy shower rain";
+			picture = "<i class=\"qi-heavy-shower-rain\"></i>";
+			break;
+
+			case 85:
+			temps = "Light snow shower";
+			picture = "<i class=\"qi-shower-snow\"></i>";
+			break;
+
+			case 86:
+			temps = "Snow shower";
+			picture = "<i class=\"qi-shower-flurry\"></i>";
+			break;
+
+			case 95:
+			temps = "Thundershower";
+			picture = "<i class=\"qi-thundershower\"></i>";
+			break;
+
+			case 96:
+			case 99:
+			temps = "Thundershower with hail";
+			picture = "<i class=\"qi-thundershower-with-hail\"></i>";
 			break;
 		}
 		weatherAndPicture.put("weather", temps);

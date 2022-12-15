@@ -2,6 +2,8 @@
 @import 'Board.css';
 @import 'Header.css';
 @import 'Modal.css';
+@import '../../node_modules/qweather-icons/font/qweather-icons.css';
+@import 'Weather.css';
 
 .App {
   text-align: center;
@@ -16,4 +18,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+@font-face {
+  font-family: acherusGrotesque;
+  src: url(../fonts/acherusgrotesque-regular-webfont.woff2);
 }

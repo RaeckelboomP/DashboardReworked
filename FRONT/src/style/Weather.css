@@ -1,0 +1,69 @@
+
+.widget {
+    height: fit-content;
+    background-color: #214851;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+.hourlyWeatherWidgetHeader {
+    background-color: #214851;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+.hourlyWeatherWidgetHeaderContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    min-height: 100px;
+}
+.hourDataContent {
+    margin: 0;
+}
+.mantine-Carousel-root {
+    background-color: #aec8ce;
+    border-radius: 0 0 8px 8px;
+}
+.widget>p {
+    margin: 0;
+}
+.forecastCityName {
+    width: 100%;
+    font-family: acherusGrotesque;
+    font-size: 2.5em;
+    margin: 0;
+    inline-size: 100%;
+    overflow-wrap: break-word;
+}
+
+.temperature {
+    font-size: 3em;
+    margin: 0;
+}
+
+.weatherIcon {
+    margin: 0;
+    height: 100%;
+    font-size: 7em;
+}
+.weatherWindIcon {
+    width: 75px;
+}
+.hourlyWeatherWindIcon {
+    margin-top: 5px;
+    width: 40px;
+}
+.hourlyWeatherIcon {
+    margin: 0;
+    font-size: 4em;
+}
