@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Weather = (props) => {
-    console.log(props.widgetDatas.data)
     return (
         <div className='widget'>
             <h2 className='forecastCityName'>{props.widgetDatas.data.label}</h2>

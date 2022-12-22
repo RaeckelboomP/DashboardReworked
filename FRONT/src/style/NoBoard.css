@@ -1,0 +1,11 @@
+.firstBoardButton {
+    background-color: lightskyblue;
+    width: fit-content;
+    padding: 30px;
+    font-size: xx-large;
+    border-radius:5px;
+    margin: auto;
+}
+.firstBoardButton:hover {
+    background-color: rgb(179, 226, 255);
+}

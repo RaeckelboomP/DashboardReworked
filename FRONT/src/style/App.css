@@ -4,6 +4,8 @@
 @import 'Modal.css';
 @import '../../node_modules/qweather-icons/font/qweather-icons.css';
 @import 'Weather.css';
+@import 'Widget.css';
+@import 'NoBoard.css';
 
 .App {
   text-align: center;

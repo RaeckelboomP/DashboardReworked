@@ -26,7 +26,6 @@
     border-bottom-style: solid;
     border-right-width: 0px;
     border-right-style: solid;
-    background-color: rgba(0, 0, 0, 0);
 }
 .new_widget {
     background-color: rgb(65, 203, 125);
@@ -35,7 +34,7 @@
     justify-content: center;
 }
 .new_widget>p {
-    margin-left: 2px;
+    margin: 4px 0 4px 5px;
 }
 .new_widget:hover {
     background-color: rgb(73, 250, 149);

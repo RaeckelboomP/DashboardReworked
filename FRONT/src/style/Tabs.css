@@ -8,7 +8,6 @@
 .current_tabs {
     display: flex;
     flex-direction: row;
-    
 }
 .plus_btn {
     margin: 0px 2px;
@@ -18,19 +17,31 @@
     align-items: center;
 }
 .tab {
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 3px 1px 6px;
     height: fit-content;
     border: 1px solid black;
-    padding-top: 1px;
-    padding-bottom: 1px; 
+    border-radius: 3px 3px 0 0;
+    min-width: 75px;
+}
+.deleteTabButton {
+    align-self: flex-end;
+    font-size: 20px;
+    top: -3px;
+    right: -3px;
+    color: #641111
+}
+.deleteTabButton:hover {
+    color: #be1010;
 }
 .active-btn {
     background-color: rgb(173, 255, 174);
 }
 
 .tab:hover {
-    border: 2px solid black;
-    padding-top: 0px;
-    padding-bottom: 0px; 
     background-color: rgb(173, 255, 174);
 }
 

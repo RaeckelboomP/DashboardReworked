@@ -1,0 +1,21 @@
+.widgetContainer {
+    display: flex;
+    flex-direction: column;
+}
+.deleteButtonContainer {
+    position: relative;
+}
+.deleteWidgetButton {
+    align-self: flex-end;
+    font-size: xx-large;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    color: rgb(245, 245, 220)
+}
+.deleteWidgetButton:hover {
+    color: brown;
+}
+.deleteWidgetButton:active {
+    color: rgb(227, 14, 14);
+}
