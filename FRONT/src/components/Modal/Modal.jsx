@@ -91,7 +91,7 @@ export default function Modal(props) {
                     <p>Add a new widget</p>
             </button>
             {modal && (
-            <div className="modal">
+            <div>
                 <div 
                 onClick={toggleModal}
                 className="overlay"></div>
@@ -109,14 +109,14 @@ export default function Modal(props) {
                     </select>
                     <p>{selectedValue}</p>
                     <button id="choice" onClick={() => {
-                        if(selectWidgetRef.current.value === 'weather') {
-                            setWeatherWidgetStatus(!weatherWidgetStatus)
-                        } else if (selectWidgetRef.current.value === 'hourlyWeather') {
-                            setHourlyWeatherWidgetStatus(!hourlyWeatherWidgetStatus)
-                        } else {
-                            setDeezerWidgetStatus(!deezerWidgetStatus)
-                        }
-                    }}>Ok</button>
+                            if (selectWidgetRef.current.value === 'weather') {
+                                setWeatherWidgetStatus(!weatherWidgetStatus);
+                            } else if (selectWidgetRef.current.value === 'hourlyWeather') {
+                                setHourlyWeatherWidgetStatus(!hourlyWeatherWidgetStatus);
+                            } else {
+                                setDeezerWidgetStatus(!deezerWidgetStatus);
+                            }
+                        }}>Ok</button>
                     {weatherWidgetStatus && (
                         <div className="weatherWidget">
                             <h3>Please type a city</h3>

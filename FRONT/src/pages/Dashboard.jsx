@@ -3,8 +3,8 @@ import {useState} from 'react';
 import { WidgetContext } from '../WidgetContext';
 import Board from "../components/Board";
 import Tab from '../components/Tab';
-import { useEffect } from 'react';
 import NoBoard from '../components/NoBoard';
+import NewTabModal from '../components/Modal/NewTabModal';
 
 const Dashboard = () => {
 
@@ -13,6 +13,11 @@ const Dashboard = () => {
     const [activeTab, setActiveTab] = useState(tabs[0] ? tabs[0].id : "");
     const [widgets, setWidgets] = useState([]);
     const [id, setId] = useState(0);
+    const [modal, setModal] = useState(false);
+
+    var toggleModal = () => {
+        setModal(!modal)
+    }
     
     var ajoutWidget = (tabId, column, data, type) => {
         setWidgets(widgets => [...widgets, {tabId:tabId, data:data, column:column, id:id, type:type}]);
@@ -23,8 +28,8 @@ const Dashboard = () => {
         setWidgets(widgets.filter(widget => widget.id !== id))
     }
 
-    var ajoutTab = () => {
-        setTabs(tabs => [...tabs, {id:idTab+1, title:prompt("Enter tab's name :")}]);
+    var ajoutTab = (tabName) => {
+        setTabs(tabs => [...tabs, {id:idTab+1, title:tabName}]);
         setActiveTab(idTab +1);
         setIdTab(idTab + 1);
     }
@@ -33,18 +38,14 @@ const Dashboard = () => {
         const BreakError = {}
         setTabs(tabs.filter(tab => tab.id !== tabId))
         if (activeTab === tabId) {
-            console.log('tabId:'+tabId)
-            console.log('activeTab:'+activeTab)
             try {
                 tabs.sort((a, b) => a.id - b.id).forEach(tab => {
-                    console.log('first'+tab.id)
                     if (tab.id > tabId) {
                         setActiveTab(tab.id)
                         throw BreakError;
                     }
                 });
                 tabs.sort((a, b) => b.id - a.id).forEach(tab => {
-                    console.log('second'+tab.id)
                     if (tab.id < tabId) {
                         setActiveTab(tab.id)
                         throw BreakError;
@@ -67,9 +68,10 @@ const Dashboard = () => {
                     ))}
                 </div>
                 {tabs.length !== 0 &&
-                <button onClick={ajoutTab}><BsFillPlusSquareFill className="plus_btn" />New board</button>
+                <button onClick={toggleModal}><BsFillPlusSquareFill className="plus_btn" />New board</button>
             }
             </div>
+            {modal && (<NewTabModal toggleModal={toggleModal} ajoutTab={ajoutTab}/>)}
             {tabs.length === 0 &&
                 <NoBoard onClick={ajoutTab}/>
             }
