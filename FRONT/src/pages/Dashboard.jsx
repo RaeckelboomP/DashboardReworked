@@ -73,7 +73,7 @@ const Dashboard = () => {
             </div>
             {modal && (<NewTabModal toggleModal={toggleModal} ajoutTab={ajoutTab}/>)}
             {tabs.length === 0 &&
-                <NoBoard onClick={ajoutTab}/>
+                <NoBoard onClick={toggleModal}/>
             }
                 {tabs.map((tab) => (
                     activeTab === tab.id 
