@@ -40,14 +40,19 @@ public class DeezerController {
         String urlAlbumsFromArtist = String.format("https://api.deezer.com/search/album?q=%s", artist);
         RestTemplate restTemplate = new RestTemplate();
         JSONObject albumsFromArtist = restTemplate.getForObject(urlAlbumsFromArtist, JSONObject.class);
-        String total = albumsFromArtist.get("total").toString();
-        HashMap<String, String> response = new HashMap<>();
-        if(Integer.parseInt(total) == 0){
+        if (albumsFromArtist != null && albumsFromArtist.get("total") != null) {
+            String total = albumsFromArtist.get("total").toString();
+            if(Integer.parseInt(total) == 0){
+                HashMap<String, String> response = new HashMap<>();
+                response.put("data", "no data");
+                return new JSONObject(response);
+            } else {
+                return albumsFromArtist;
+            }
+        } else {
+            HashMap<String, String> response = new HashMap<>();
             response.put("data", "no data");
             return new JSONObject(response);
-        } else {
-
-            return albumsFromArtist;
         }
     }
 }
